@@ -7,7 +7,7 @@
    <img class="robo" src="../../src/assets/yellowrobo.jpg">
 
    <h6 >
-     Hi! I am your Personal RA. No judgments only solution.
+     Hi! I am your Chitthi, your Personal RA. No judgments only solution.
    </h6>
 
 
@@ -15,10 +15,12 @@
    <button @click="register" class="btn">Send</button>
    <button @click="clear" class="btn">Clear</button>
 
+<div v-if="utterance !==''">
 <div v-if="results === 'HealthIssues'">
-  <h6 class="answer">  Oh no! So, you're sick? It's okay. Take three deep breathes.
+  <h6 class="answer">
+    <p class="bold">Oh no! So, you're sick? It's okay. Take three deep breathes.
     Things could've been worse.
-
+    </p>
 
     <li>
       Call your parents. Sometimes, just talking to them makes us feel better.
@@ -38,7 +40,8 @@
 
 </div>
 <div v-else-if="results === 'MentalHealthIssues'">
-   <h6 class="answer">  I feel you! College can be overwhelming and stressful.
+   <h6 class="answer">
+     <p class="bold">I feel you! College can be overwhelming and stressful.</p>
  Here are some things that helped me personally to deal with my emotions.
 
      <li>
@@ -141,7 +144,7 @@
 
 
 
-
+</div>
  </div>
 </template>
 
@@ -179,6 +182,7 @@ export default {
         },
         clear(){
             this.utterance='';
+            this.results='';
         }
         }
 
